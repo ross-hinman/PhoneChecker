@@ -9,7 +9,9 @@ namespace PhoneChecker
         {
             Console.WriteLine("Enter your phone number:");
             string phoneNumb = Console.ReadLine();
+
             bool isLegit = StaticPhoneCheck.PhoneNumbCheck(phoneNumb);
+
             Console.WriteLine("Static Check:");
             if (isLegit)
             {
@@ -22,6 +24,7 @@ namespace PhoneChecker
 
             var nonStatic = new NonStaticPhoneCheck();
             bool nonStaticIsLegit = nonStatic.PhoneNumbCheck(phoneNumb);
+
             Console.WriteLine("NonStatic Check");
             if (nonStaticIsLegit)
             {
@@ -34,9 +37,12 @@ namespace PhoneChecker
 
             Console.WriteLine("Enter a number that contains letters and numbers:");
             string alphaNumb = Console.ReadLine().ToLower();
+
             string newAlphaNumb = nonStatic.ConvertLetters(alphaNumb);
+
             Console.WriteLine("Your converted Phone Number:");
             Console.WriteLine(newAlphaNumb);
+
             bool convertedAlphaNumb = nonStatic.PhoneNumbCheck(newAlphaNumb);
             if (convertedAlphaNumb)
             {
